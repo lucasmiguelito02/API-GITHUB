@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref, computed } from 'vue';
+import { reactive, ref, computed, onMounted, onUpdated, onUnmounted } from 'vue';
 
 const searchInput = ref('')
 
@@ -39,6 +39,19 @@ const reposCountMessage = computed(() => {
     ? `${state.name} possui ${state.repos.length} repositórios públicos.`
     : `${state.name} não possui nenhum repositório público.`
 })
+
+onMounted(() => {
+  console.log("O componente foi montado.")
+})
+
+onUpdated(() => {
+  console.log("O componente foi atualizado.")
+})
+
+onUnmounted(() => {
+  console.log("O componente foi desmontado.")
+})
+
 </script>
 
 <template>
