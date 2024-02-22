@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue';
-import CompositionApi from './components/CompositionApi.vue'
+import Profile from './components/Profile.vue'
 
 const isOpen = ref(true)
 </script>
 
 <template>
   <input type="checkbox" v-model="isOpen"> {{ isOpen }}
-  <CompositionApi v-if="isOpen" />
+  <Profile v-if="isOpen" />
 </template>
 
 <style>
@@ -18,4 +18,10 @@ const isOpen = ref(true)
   margin: 0 auto;
   text-align: center;
 }
+
+a {
+  color: #f64348;
+}
+
+
 </style>
