@@ -52,23 +52,19 @@ onUpdated(() => {
 onUnmounted(() => {
   console.log("O componente foi desmontado.")
 })
-
 </script>
 
 <template>
-	<h1>GitHub User Data</h1>
+  <slot></slot>
   <p>Pesquisando por: <strong>https://api.github.com/users/{{ username }}</strong></p>
   <Form @form-submit="fetchGithubUser" v-model="username" />
-    <UserInfo v-if="state.login" :login="state.login" :name="state.name" :company="state.company" :bio="state.bio" :avatar_url="state.avatar_url" />
+    <UserInfo v-if="state.login !== ''" :login="state.login" :name="state.name" :company="state.company" :avatar_url="state.avatar_url" />
 
     <section v-if="state.repos.length > 0">
       <h2>{{ reposCountMessage }}</h2>
-        <Repository v-for="repo of state.repos" :full_name="repo.full_name" :description="repo.description" :html_url="repo.html_url" /> 
+        <Repository v-for="repo in state.repos" :full_name="repo.full_name" :description="repo.description" :html_url="repo.html_url" /> 
     </section>
+
+    <slot name="footer"></slot>
 </template>
 
-<style scoped>
-h1 {
-  color:  #f64348;
-}
-</style>
