@@ -62,7 +62,7 @@ onUnmounted(() => {
 
     <section v-if="state.repos.length > 0">
       <h2>{{ reposCountMessage }}</h2>
-        <Repository v-for="repo in state.repos" :full_name="repo.full_name" :description="repo.description" :html_url="repo.html_url" /> 
+        <Repository v-for="repo in state.repos" :full_name="repo.full_name" :description="repo.description" :html_url="repo.html_url" />
     </section>
 
     <slot name="footer"></slot>
