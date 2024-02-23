@@ -1,7 +1,7 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
 
-const emit = defineEmits(['formSubmit']);
+const emit = defineEmits(['formSubmit' , 'update:modelValue']);
 const searchInput = ref('');
 
 function handleSubmit() {
