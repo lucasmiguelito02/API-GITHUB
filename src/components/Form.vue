@@ -1,9 +1,7 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
-
-const emit = defineEmits(['formSubmit' , 'update:modelValue']);
+const emit = defineEmits(['formSubmit']);
 const searchInput = ref('');
-
 function handleSubmit() {
     ev.preventDefault();
     emit('formSubmit', searchInput.value);
@@ -20,7 +18,7 @@ function handleSubmit() {
         <button type="submit">Carregar Usuário</button>
     </form>
 </template>
-  
+
 
 
 
@@ -30,7 +28,6 @@ button {
   max-width: 20rem;
   padding: .5rem;
 }
-
 input {
   background-color: #1c1a1d;
   border: 1px solid #f64348;
@@ -38,7 +35,6 @@ input {
   color: #e5e5e5;
   margin: 1rem 1rem 1rem 0;
 }
-
 button {
   background-color: #f64348;
   border: unset;
@@ -48,7 +44,6 @@ button {
   font-weight: 700;
   text-transform: uppercase;
 }
-
 button:hover {
   cursor: pointer;
   filter: brightness(0.95);

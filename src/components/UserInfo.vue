@@ -20,16 +20,13 @@ defineProps(['login', 'name', 'company', 'bio', 'avatar_url'])
     width: 8rem;
     height: 8rem;
     }
-
     h1, h2 {
     color: #f64348;
     margin: 1rem auto .25rem;
     }
-
     h3 {
     margin: 1rem auto .25rem;
     }
-
     span{
     display: block;
     margin: 1rem auto;
